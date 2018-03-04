@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tables Version="9.6.6445.23431" Output="Entity" NameSpace="StockData.Analysis.Entity" ConnName="Analysis" BaseClass="Entity">
+  <Table Name="StockElementInfo" Description="股票分析元数据" ConnName="stock_analysis">
+    <Columns>
+      <Column Name="Code" DataType="String" PrimaryKey="True" Description="股票编码" />
+      <Column Name="Name" DataType="String" Master="True" Description="名称" />
+      <Column Name="Price" DataType="Double" Description="当前价格" />
+      <Column Name="Rate" DataType="Double" Description="当前倍数" />
+      <Column Name="MaxPrice" DataType="Double" Description="历史最高价格" />
+      <Column Name="MinPrice" DataType="Double" Description="历史最低价格" />
+      <Column Name="MaxRate" DataType="Double" Description="历史倍数" />
+      <Column Name="Max5year" DataType="Double" Description="近5年最高" />
+      <Column Name="Min5year" DataType="Double" Description="近5年最低" />
+      <Column Name="Max5Rate" DataType="Double" Description="近5年倍数" />
+      <Column Name="UpdateDate" DataType="DateTime" Description="更新日期" />
+    </Columns>
+  </Table>
+  <Indexes>
+    <Index Columns="Code" />
+  </Indexes>
+</Tables>

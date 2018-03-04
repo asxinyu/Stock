@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tables Version="9.6.6445.23431" Output="Entity" NameSpace="StockData.Entity" ConnName="stock" BaseClass="Entity">
+  <Table Name="StockBaseInfo" Description="股票基础信息" ConnName="stock_base">
+    <Columns>
+      <Column Name="Code" DataType="String" PrimaryKey="True" Description="股票编码" />
+      <Column Name="Name" DataType="String" Master="True" Description="名称" />
+      <Column Name="Exchange" DataType="String" Description="交易所" />
+      <Column Name="Kind" DataType="Int32" Description="类型。1是要分析的sh,sz股票，0是暂时不分析的" />
+      <Column Name="StartDate" DataType="DateTime" Description="上市日期" />
+      <Column Name="CreateDate" DataType="DateTime" Description="创建时间" />
+    </Columns>
+    <Indexes>
+      <Index Columns="Name" />
+      <Index Columns="StartDate" />
+    </Indexes>
+  </Table>
+  <Table Name="IndexInfo" Description="指数信息" ConnName="stock_base">
+    <Columns>
+      <Column Name="Code" DataType="String" PrimaryKey="True" Description="股票编码" />
+      <Column Name="Name" DataType="String" Master="True" Description="名称" />
+      <Column Name="CreateDate" DataType="DateTime" Description="创建时间" />
+    </Columns>
+    <Indexes>
+      <Index Columns="Name" />
+    </Indexes>
+  </Table>
+  <Table Name="GroupKind" Description="板块分类" ConnName="stock_base">
+    <Columns>
+      <Column Name="ID" DataType="String" PrimaryKey="True" Description="编码。url相关" />
+      <Column Name="Name" DataType="String" Master="True" Description="板块名称" />
+      <Column Name="Kind" DataType="String" Description="分类。1.行业，2地域，3.概念" />
+      <Column Name="Total" DataType="Int32" Description="总数" />
+      <Column Name="CreateDate" DataType="DateTime" Description="创建时间" />
+    </Columns>
+    <Indexes>
+      <Index Columns="Kind" />
+      <Index Columns="Name" />
+    </Indexes>
+  </Table>
+  <Table Name="StockGroup" Description="股票板块信息" ConnName="stock_base">
+    <Columns>
+      <Column Name="ID" DataType="String" PrimaryKey="True" Description="编号。groupid+stockid" />
+      <Column Name="GroupID" DataType="String" Description="板块ID" />
+      <Column Name="Kind" DataType="String" Description="分类。1.行业，2地域，3.概念" />
+      <Column Name="Code" DataType="String" Description="股票代码" />
+      <Column Name="StockName" DataType="String" Description="股票名称" />
+      <Column Name="CreateDate" DataType="DateTime" Description="创建时间" />
+    </Columns>
+    <Indexes>
+      <Index Columns="GroupID" />
+      <Index Columns="Code" />
+    </Indexes>
+  </Table>
+  <Table Name="StockHisText" Description="股票历史文本数据" ConnName="stock_his">
+    <Columns>
+      <Column Name="Code" DataType="String" PrimaryKey="True" Description="股票编码" />
+      <Column Name="Start" DataType="DateTime" Description="起始日期" />
+      <Column Name="End" DataType="DateTime" Description="结束日期" />
+      <Column Name="HisText" DataType="String" RawType="Text" Description="历史数据文本" />
+    </Columns>
+  </Table>
+  <Table Name="StockDayData" Description="股票日数据" ConnName="stock_day">
+    <Columns>
+      <Column Name="ID" DataType="String" PrimaryKey="True" Description="编号。code+日期" />
+      <Column Name="Code" DataType="String" Description="股票编码" />
+      <Column Name="StatDate" DataType="DateTime" Description="数据日期" />
+      <Column Name="StartPrice" DataType="Double" Description="开盘价格" />
+      <Column Name="EndPrice" DataType="Double" Description="收盘价格" />
+      <Column Name="ChangePrice" DataType="Double" Description="涨跌金额" />
+      <Column Name="ChangeRatio" DataType="Double" Description="涨跌幅度" />
+      <Column Name="LowPrice" DataType="Double" Description="最低价格" />
+      <Column Name="HighPrice" DataType="Double" Description="最高价格" />
+      <Column Name="TotalHand" DataType="Int32" Description="总手" />
+      <Column Name="TotalAmount" DataType="Double" Description="总金额(万)" />
+      <Column Name="HandRate" DataType="Double" Description="换手率" />
+      <Column Name="UpdateDate" DataType="DateTime" Description="更新日期" />
+    </Columns>
+  </Table>
+</Tables>
