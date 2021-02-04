@@ -12,7 +12,9 @@ namespace StockData
         static void Main(string[] args)
         {
             XTrace.UseConsole();
-            StockHelper.AnalysisFirst();
+            var str = "20200331";
+
+            //StockHelper.AnalysisFirst();
             //StockHelper.SpliteDB();
             //GroupKind.ParseGroupInfo();
             //StockHisText.PraseHistoryData();

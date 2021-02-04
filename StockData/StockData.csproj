@@ -65,6 +65,10 @@
     <Compile Include="Analysis\Entity\股票分析元数据.Biz.cs" />
     <Compile Include="Analysis\Entity\股票分析元数据.cs" />
     <Compile Include="Analysis\StockHelper.cs" />
+    <Compile Include="AssistInfo\Entity\重要财务指标.Biz.cs" />
+    <Compile Include="AssistInfo\Entity\重要财务指标.cs" />
+    <Compile Include="BaseEntity\Entity\股票基础信息.Biz.cs" />
+    <Compile Include="BaseEntity\Entity\股票基础信息.cs" />
     <Compile Include="Entity\指数信息.Biz.cs" />
     <Compile Include="Entity\指数信息.cs" />
     <Compile Include="Entity\板块分类.Biz.cs" />
@@ -93,6 +97,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>XCoder.tt</DependentUpon>
     </None>
+    <None Include="BaseEntity\XCoder.log">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XCoder.tt</DependentUpon>
+    </None>
     <None Include="XCoder.log">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +118,11 @@
     </Content>
     <Content Include="AssistInfo\AssistInfo.xml" />
     <Content Include="AssistInfo\XCoder.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>XCoder.log</LastGenOutput>
+    </Content>
+    <Content Include="BaseEntity\StockData.xml" />
+    <Content Include="BaseEntity\XCoder.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>XCoder.log</LastGenOutput>
     </Content>

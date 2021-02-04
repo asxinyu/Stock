@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tables Version="9.6.6445.23431" Output="Entity" NameSpace="StockData.Entity" ConnName="stock" BaseClass="Entity">
+  <Table Name="StockInfo" Description="股票基础信息" ConnName="BaseStock">
+    <Columns>
+      <Column Name="Code" DataType="String" PrimaryKey="True" Description="股票编码" />
+      <Column Name="Name" DataType="String" Master="True" Description="名称" />
+      <Column Name="Kind" DataType="String" Description="类型。备用" />
+      <Column Name="StartDate" DataType="DateTime" Description="上市日期" />
+      <Column Name="CreateDate" DataType="DateTime" Description="创建时间" />
+    </Columns>
+    <Indexes>
+      <Index Columns="Name" />
+      <Index Columns="StartDate" />
+    </Indexes>
+  </Table>
+</Tables>
