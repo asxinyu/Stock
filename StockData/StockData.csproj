@@ -77,6 +77,7 @@
     <Compile Include="Entity\股票日数据.cs" />
     <Compile Include="Entity\股票板块信息.Biz.cs" />
     <Compile Include="Entity\股票板块信息.cs" />
+    <Compile Include="HtmlHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,6 +88,11 @@
       <DesignTime>True</DesignTime>
     </None>
     <None Include="App.config" />
+    <None Include="AssistInfo\XCoder.log">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XCoder.tt</DependentUpon>
+    </None>
     <None Include="XCoder.log">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +104,11 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Analysis\XCoder.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>XCoder.log</LastGenOutput>
+    </Content>
+    <Content Include="AssistInfo\AssistInfo.xml" />
+    <Content Include="AssistInfo\XCoder.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>XCoder.log</LastGenOutput>
     </Content>
